@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from contact.models import Employee
 from . forms import EmployeeForm
 
-# Create your views here.
+# Create your views here. with mysql db
 def contact(request):
     return render(request, 'pages/contact.html')
 
