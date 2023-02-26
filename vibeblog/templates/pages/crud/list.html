@@ -1,0 +1,48 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+{% block title %} List {% endblock title %}
+
+{% block content %} 
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Contact Form Area -->
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="contact-form">
+                    <h5><a href="{% url 'contact_crud_create' %}" class="btn btn-success">Add New</a></h5>
+                    <table class="table table-striped table-bordered table-sm">  
+                        <thead class="thead-dark">  
+                            <tr>  
+                                <th>Employee ID</th>  
+                                <th>Employee         Name</th>  
+                                <th>Employee Email</th>  
+                                <th>Employee Contact</th>  
+                                <th>Actions</th>  
+                            </tr>  
+                        </thead>  
+                        <tbody>
+                        {% for item in data %}  
+                            <tr>  
+                                <td>{{ item.id }}</td>  
+                                <td>{{ item.ename }}</td>  
+                                <td>{{ item.eemail }}</td>  
+                                <td>{{ item.econtact }}</td>  
+                                <td>  
+                                    <a href="/contact/crud-edit/{{ item.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                                    <a href="/contact/crud-destroy/{{ item.id }}">Delete</a>  
+                                </td>  
+                            </tr>  
+                        {% endfor %}
+                        </tbody>  
+                    </table>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Contact Area End ##### -->
+
+{% endblock content %} 

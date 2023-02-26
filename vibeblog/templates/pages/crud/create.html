@@ -1,0 +1,64 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+{% block title %} Form {% endblock title %}
+
+{% block content %} 
+
+<!-- ##### Contact Area Start ##### -->
+<section class="contact-area section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Contact Form Area -->
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="contact-form">
+                    <h5>Create Employee</h5>
+                    <!-- Contact Form -->
+                    <form method="POST" action="/contact/crud-store">
+                        {% csrf_token %}                        
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    {{ form.id }}  
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>ID</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    {{ form.ename }}  
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    {{ form.econtact }}   
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Contact</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="group">
+                                    {{ form.eemail }}   
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn original-btn">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ##### Contact Area End ##### -->
+
+{% endblock content %} 
