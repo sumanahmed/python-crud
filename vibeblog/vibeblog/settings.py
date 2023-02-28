@@ -83,15 +83,11 @@ WSGI_APPLICATION = 'vibeblog.wsgi.application'
 DATABASES = {
      'default': {        
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'python_db',
+        'NAME': 'python_db/123456@localhost:1521/126',
         'USER': 'python_db',
         'PASSWORD': '123456',
         'HOST': 'localhost',
-        'PORT': '1521',
-        'SID': '126',
-        'OPTIONS': {
-            'threaded': True,
-        },
+        'PORT': '1521'
     }
 }
 
